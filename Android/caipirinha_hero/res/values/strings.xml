@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World!</string>
+    <string name="app_name">Caipirinha Hero</string>
+    <string name="wait">aguarde...</string>
+    <string name="hardware_status">Hardware Conectado</string>
+    <string name="nota_do">Dó</string>
+    <string name="nota_re">Ré</string>
+    <string name="nota_mi">Mi</string>
+    <string name="nota_fa">Fa</string>
+    <string name="nota_sol">Sol</string>
+    <string name="nota_la">La</string>
+    <string name="nota_si">Si</string>
+    <string name="nota_plus">+</string>
+    <string name="no_device">Please connect a Caipirinha Hero board.</string>
+    <string name="Pad">Pad</string>
+    <string name="Sequencer">Sequenciador</string>
+    <string name="quit">Sair</string>
+    <string name="exibir">Exibir</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="titulo">Título</string>
+</resources>

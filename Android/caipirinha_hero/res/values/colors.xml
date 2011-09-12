@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="DemoKitTextWhite">#FFF</color>
+	<color name="DemoKitLabelGray">#666</color>
+	<color name="Black">#000</color>
+</resources>

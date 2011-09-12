@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/exibir" android:id="@+id/menu_modo" android:icon="@drawable/ic_menu_guitar">
+    	<menu>
+			<group android:checkableBehavior="single">
+				<item android:title="@string/Pad" android:checked="true" android:id="@+id/menu_mode_pad"/>
+				<item android:title="@string/Sequencer" android:id="@+id/menu_mode_sequencer"/>
+			</group>
+    	</menu>    	
+    </item>
+    
+    <item android:id="@+id/menu_music" android:title="Música" android:icon="@drawable/ic_menu_music">
+        <menu>
+            <item android:checkable="true" android:id="@+id/menu_repeatmusic" android:title="Repetir sequência"></item><item android:title="Adicionar linha" android:id="@+id/menu_addline" android:visible="false"></item>
+            <item android:title="Carregar música..." android:id="@+id/menu_loadmusic" android:visible="false"></item>
+            <item android:title="Salvar música..." android:id="@+id/menu_savemusic" android:visible="false"></item>
+            
+        </menu>
+    </item>
+    
+    
+    <item android:id="@+id/menu_playpause" android:title="Play/Pause" android:icon="@drawable/ic_menu_play"></item>
+
+    <item android:id="@+id/menu_frequency" android:title="Frequência" android:icon="@drawable/ic_menu_clock">
+	   	<menu>
+			<group android:checkableBehavior="single">
+				<item android:title="100ms" android:checked="true" android:id="@+id/menu_frequency_100"/>
+				<item android:title="200ms" android:id="@+id/menu_frequency_200"/>
+				<item android:title="300ms" android:id="@+id/menu_frequency_300"/>
+				<item android:title="400ms" android:id="@+id/menu_frequency_400"/>
+				<item android:title="500ms" android:id="@+id/menu_frequency_500"/>
+				<item android:title="600ms" android:id="@+id/menu_frequency_600"/>
+				<item android:title="700ms" android:id="@+id/menu_frequency_700"/>
+				<item android:title="800ms" android:id="@+id/menu_frequency_800"/>
+				<item android:title="900ms" android:id="@+id/menu_frequency_900"/>
+				<item android:title="1s" android:id="@+id/menu_frequency_1000"/>
+				<item android:title="1,5s" android:id="@+id/menu_frequency_1500"/>
+				<item android:title="2s" android:id="@+id/menu_frequency_2000"/>
+			</group>
+	   	</menu>    	
+    </item>
+    
+    
+    <item android:title="@string/quit" android:id="@+id/menu_quit" android:icon="@drawable/ic_menu_exit">
+    </item>
+    
+</menu>

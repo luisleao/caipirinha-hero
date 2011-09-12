@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+    
+	
+	<LinearLayout
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:orientation="horizontal"
+	  android:layout_width="match_parent" android:layout_weight="1" android:layout_height="40dp" android:layout_marginBottom="1dp">
+		
+		<TextView android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/nota_C" android:text="C" android:clickable="true" android:layout_width="0dp" android:gravity="center" android:background="@drawable/tab_normal_holo_dark" android:layout_weight="1" android:layout_marginRight="1dp" android:layout_height="wrap_content"></TextView>
+		<TextView android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/nota_D" android:text="D" android:clickable="true" android:layout_width="0dp" android:gravity="center" android:background="@drawable/tab_normal_holo_dark" android:layout_weight="1" android:layout_marginRight="1dp" android:layout_height="wrap_content"></TextView>
+		<TextView android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/nota_E" android:text="E" android:clickable="true" android:layout_width="0dp" android:gravity="center" android:background="@drawable/tab_normal_holo_dark" android:layout_weight="1" android:layout_marginRight="1dp" android:layout_height="wrap_content"></TextView>
+		<TextView android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/nota_F" android:text="F" android:clickable="true" android:layout_width="0dp" android:gravity="center" android:background="@drawable/tab_normal_holo_dark" android:layout_weight="1" android:layout_marginRight="1dp" android:layout_height="wrap_content"></TextView>
+		<TextView android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/nota_G" android:text="G" android:clickable="true" android:layout_width="0dp" android:gravity="center" android:background="@drawable/tab_normal_holo_dark" android:layout_weight="1" android:layout_marginRight="1dp" android:layout_height="wrap_content"></TextView>
+		<TextView android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/nota_A" android:text="A" android:clickable="true" android:layout_width="0dp" android:gravity="center" android:background="@drawable/tab_normal_holo_dark" android:layout_weight="1" android:layout_marginRight="1dp" android:layout_height="wrap_content"></TextView>
+		<TextView android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/nota_B" android:text="B" android:clickable="true" android:layout_width="0dp" android:gravity="center" android:background="@drawable/tab_normal_holo_dark" android:layout_weight="1" android:layout_marginRight="1dp" android:layout_height="wrap_content"></TextView>
+		<TextView android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/nota_C1" android:text="C1" android:clickable="true" android:layout_width="0dp" android:background="@drawable/tab_normal_holo_dark" android:gravity="center" android:layout_weight="1" android:layout_marginRight="1dp" android:layout_height="wrap_content"></TextView>
+	
+	 	<TextView android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/nota_num" android:layout_width="0dp" android:text="#" android:gravity="center" android:layout_weight="1" android:layout_height="wrap_content" android:background="@drawable/tab_normal_holo_dark"></TextView>
+		
+	</LinearLayout>
+		
+	
+	
+	<ListView android:id="@+id/sequencer_grid" android:layout_width="fill_parent" android:numColumns="1" android:layout_gravity="top" android:layout_weight="1" android:layout_height="match_parent">
+	<!-- Preview: listitem=@layout/sequencer_item -->
+	</ListView>
+
+   
+</LinearLayout>
