@@ -15,6 +15,7 @@ import br.com.luisleao.caipirinhahero.BaseActivity.NotesAdapter.ViewHolder;
 import com.android.future.usb.UsbAccessory;
 import com.android.future.usb.UsbManager;
 
+
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
