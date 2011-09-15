@@ -10,10 +10,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-import br.com.luisleao.caipirinhahero.BaseActivity.NotesAdapter.ViewHolder;
-
-import com.android.future.usb.UsbAccessory;
-import com.android.future.usb.UsbManager;
+//import com.android.future.usb.UsbAccessory;
+//import com.android.future.usb.UsbManager;
+import android.hardware.usb.*;
 
 
 import android.app.Activity;
@@ -30,12 +29,12 @@ import android.os.Message;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -193,6 +192,7 @@ public class BaseActivity extends Activity implements Runnable  {
 
 		switch (item.getItemId()) {
 		case R.id.menu_mode_pad:
+			saveData();
 	    	item.setChecked(true);
 	    	showPad();
 		    return true;
@@ -217,6 +217,12 @@ public class BaseActivity extends Activity implements Runnable  {
 		case R.id.menu_addline:
 			// add new line
 			notes.add(new Nota(0));
+			saveData();
+			adapter.notifyDataSetChanged();
+			return true;
+			
+		case R.id.menu_clearlines:
+			notes.clear();
 			saveData();
 			adapter.notifyDataSetChanged();
 			return true;
@@ -341,6 +347,8 @@ public class BaseActivity extends Activity implements Runnable  {
 	
 	
 	protected void loadData() {
+		notes.clear();
+
 		// load data from app
 		SharedPreferences sp = getPreferences(MODE_PRIVATE);
 		String musicData = sp.getString("music", "");
@@ -377,7 +385,8 @@ public class BaseActivity extends Activity implements Runnable  {
 			String action = intent.getAction();
 			if (ACTION_USB_PERMISSION.equals(action)) {
 				synchronized (this) {
-					UsbAccessory accessory = UsbManager.getAccessory(intent);
+					//UsbAccessory accessory = UsbManager.getAccessory(intent);
+					UsbAccessory accessory = (UsbAccessory) intent.getParcelableExtra(UsbManager.EXTRA_ACCESSORY);
 					if (intent.getBooleanExtra(
 							UsbManager.EXTRA_PERMISSION_GRANTED, false)) {
 						openAccessory(accessory);
@@ -388,7 +397,8 @@ public class BaseActivity extends Activity implements Runnable  {
 					mPermissionRequestPending = false;
 				}
 			} else if (UsbManager.ACTION_USB_ACCESSORY_DETACHED.equals(action)) {
-				UsbAccessory accessory = UsbManager.getAccessory(intent);
+				//UsbAccessory accessory = UsbManager.getAccessory(intent);
+				UsbAccessory accessory = (UsbAccessory) intent.getParcelableExtra(UsbManager.EXTRA_ACCESSORY);
 				if (accessory != null && accessory.equals(mAccessory)) {
 					closeAccessory();
 				}
@@ -402,7 +412,9 @@ public class BaseActivity extends Activity implements Runnable  {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		mUsbManager = UsbManager.getInstance(this);
+		//mUsbManager = UsbManager.getInstance(this);
+		mUsbManager = (UsbManager) getSystemService(Context.USB_SERVICE);
+
 		mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(
 				ACTION_USB_PERMISSION), 0);
 		IntentFilter filter = new IntentFilter(ACTION_USB_PERMISSION);
@@ -414,7 +426,8 @@ public class BaseActivity extends Activity implements Runnable  {
 			openAccessory(mAccessory);
 		}
 
-	    requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
+
 		setContentView(R.layout.main);
 		enableControls(false);
 

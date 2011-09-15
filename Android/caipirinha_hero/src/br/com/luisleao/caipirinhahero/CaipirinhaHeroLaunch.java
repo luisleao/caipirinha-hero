@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
+import android.view.Window;
 
 
 public class CaipirinhaHeroLaunch extends Activity {
@@ -16,7 +17,7 @@ public class CaipirinhaHeroLaunch extends Activity {
 		//int maxExtent = Math.max(display.getWidth(), display.getHeight());
 
 		Intent intent;
-		Log.i(TAG, "starting phone ui");
+		//Log.i(TAG, "starting phone ui");
 		intent = new Intent(activity, CaipirinhaHeroPhone.class);
 		return intent;
 	}

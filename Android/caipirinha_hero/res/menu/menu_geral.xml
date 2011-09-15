@@ -14,7 +14,7 @@
             <item android:checkable="true" android:id="@+id/menu_repeatmusic" android:title="Repetir sequência"></item><item android:title="Adicionar linha" android:id="@+id/menu_addline" android:visible="false"></item>
             <item android:title="Carregar música..." android:id="@+id/menu_loadmusic" android:visible="false"></item>
             <item android:title="Salvar música..." android:id="@+id/menu_savemusic" android:visible="false"></item>
-            
+            <item android:title="Excluir todas as linhas" android:id="@+id/menu_clearlines"></item>
         </menu>
     </item>
     

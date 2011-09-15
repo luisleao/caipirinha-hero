@@ -5,9 +5,11 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 
@@ -67,6 +69,17 @@ public class CaipirinhaHeroPhone extends BaseActivity implements OnItemClickList
 	
 	
 	public void onCreate(Bundle savedInstanceState) {
+
+		// oculta Title se estiver em celulares e deixa vis’vel (para menu) em tablets
+		Display display = this.getWindowManager().getDefaultDisplay();
+		int maxExtent = Math.max(display.getWidth(), display.getHeight());
+		if (maxExtent <= 1200) {
+			this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		}
+
+		
+
+		
 		super.onCreate(savedInstanceState);
 
 		tecla_c = (TextView) findViewById(R.id.tecla_c);

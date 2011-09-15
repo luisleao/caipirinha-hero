@@ -30,8 +30,8 @@
 
 #define TEMPO 100
 #define TOTAL_SERVOS 8
-#define ANGULO_ON 15 //45
-#define ANGULO_OFF 0 //60
+#define ANGULO_ON 45 //45
+#define ANGULO_OFF 60 //60
 
 #define SERVO_PINO 5
 
@@ -41,7 +41,7 @@ AndroidAccessory acc("luisleao",
   "CaipirinhaHero",
   "Caipirinha Hero Player",
   "1.0",
-  "http://luisleao.com.br/",
+  "http://market.android.com/details?id=br.com.luisleao.caipirinhahero",
   "0000000000000001");
 
 
